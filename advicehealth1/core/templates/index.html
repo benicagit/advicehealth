@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+   <div class="row">
+       <h1>Veículos</h1>
+       <table class="table table-striped">
+           <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Cor</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Proprietário</th>
+                    <th scope="col">Ação</th>
+                </tr>
+           </thead>
+           <tbody>
+                {% for veiculo in veiculos %}
+                    <tr>
+                        <td>{{ veiculo.id }}</td>
+                        <td>{{ veiculo.modelo }}</td>
+                        <td>{{ veiculo.cor }}</td>
+                        <td>{{ veiculo.tipo }}</td>
+                        <td>{{ veiculo.proprietario }}</td>
+                        <td>
+                            <a class="btn btn-warning" href="{% url 'editar-veiculo' veiculo.id %}">Vender</a>
+                            <a class="btn btn-danger" href="{% url 'excluir-veiculo' veiculo.id %} ">Excluir</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+           </tbody>
+       </table>
+   </div>
+
+{% endblock %}

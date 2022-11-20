@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+<br>
+    <div class="container">
+      <a type="button" class="btn btn-primary" href="{% url 'cadastro' %}">Proprietários</a>
+      <a type="button" class="btn btn-primary" href="{% url 'cadastro' %}">Veículos</a>
+    </div>
+
+{% endblock %}
