@@ -7,9 +7,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_DB=admin
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=advicehealth
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
 
   pgadmin:
     image: dpage/pgadmin4:6.9
@@ -27,11 +27,11 @@ services:
     depends_on:
       - postgres
 
-  backend:
-    build: backend
+  advicehealth:
+    build: .
     restart: unless-stopped
     volumes:
-      - ./backend:/app
+      - ./:/app
       - static_django:/app/static
     depends_on:
       - postgres
