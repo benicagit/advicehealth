@@ -40,6 +40,11 @@ class EditarVeiculoView(UpdateView):
 
     def form_valid(self, form):
         context = super(EditarVeiculoView, self).get_context_data()
+        valido, campo, msg = regras_negocio().qtd_veiculo_proprietario(form)
+        if not valido:
+            form.add_error(campo, msg)
+            return self.form_invalid(form)
+        
         regras_negocio().oprtunidade_de_venda(form, context)
         return super(EditarVeiculoView, self).form_valid(form)
 
