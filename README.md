@@ -1,6 +1,6 @@
 # Instruções para rodar o projeto
 
-# Instalar o Docker no Ubuntu:
+## Instalar o Docker no Ubuntu:
   # Instale Pacotes de Pré-requisitos
   sudo apt-get install  curl apt-transport-https ca-certificates software-properties-common
   
@@ -24,7 +24,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 # Realizar o clone do projeto
-git clone 
+git clone https://github.com/benicagit/advicehealth.git
 
 # Buildar e subir as imagens docker:
 Dentro da pasta raiz do projeto executar o comando:
